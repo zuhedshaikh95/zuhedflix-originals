@@ -1,4 +1,4 @@
-import Image from 'next/image' 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { baseImageURL } from '@/constants/movie'
 import { Movie } from '@/typings'
@@ -24,7 +24,7 @@ const Banner = (props: Props) => {
   }, [trendingNow]);
 
   return (
-    <div className="flex flex-col space-y-2 h-[85vh] justify-center md:h-[80vh] md:space-y-4 md:justify-center lg:justify-end lg:pb-12">
+    <div className="flex flex-col space-y-2 h-[85vh] justify-center md:h-[80vh] md:space-y-4 lg:justify-end lg:pb-12">
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
         <Image
           src={`${baseImageURL}${movie?.backdrop_path || movie?.poster_path}`}
