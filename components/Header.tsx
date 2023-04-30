@@ -4,6 +4,7 @@ import {
 	BellIcon,
 	MagnifyingGlassIcon as SearchIcon,
 } from "@heroicons/react/24/solid";
+import { BasicMenu } from "./";
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -34,6 +35,8 @@ const Header = () => {
 					alt=""
 					className="cursor-pointer object-contain"
 				/>
+
+				<BasicMenu />
 
 				<ul className="hidden space-x-4 md:flex">
 					<li className="headerLink">Home</li>
