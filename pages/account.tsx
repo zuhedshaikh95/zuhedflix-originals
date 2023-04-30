@@ -6,6 +6,7 @@ import Head from "next/head";
 import Link from "next/link";
 import payments from "@/lib/stripe";
 import { Membership } from "@/components";
+import { goToBillingPortal } from "@/lib/stripe";
 
 interface Props {
 	products: Product[];
@@ -61,17 +62,20 @@ const Account = (props: Props) => {
 				<Membership />
 
 				<div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0 md:pb-0">
-					<h4>Plan Details</h4>
+					<h4 className="text-lg text-[gray]">Plan Details</h4>
 					{/* Find the current plan */}
-					<div className="">
+					<div className="col-span-2 font-medium">
 						{
-							products.filter(
+							products.find(
 								(product: Product) =>
 									product.id === subscription?.product
-							)[0]?.name
+							)?.name
 						}
 					</div>
-					<p className="cursor-pointer text-blue-500 hover:underline md:text-right">
+					<p
+						className="cursor-pointer text-blue-500 hover:underline md:text-right"
+						onClick={goToBillingPortal}
+					>
 						Change plan
 					</p>
 				</div>
