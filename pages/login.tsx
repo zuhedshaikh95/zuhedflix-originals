@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { useAuth } from '@/hooks'
+import { useAuth } from '@/hooks';
+import { Loader } from '@/components';
+
 
 interface Inputs {
   email: string
@@ -11,7 +13,7 @@ interface Inputs {
 
 const login = () => {
   const [login, setLogin] = useState<boolean>(false);
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, error, loading } = useAuth();
 
   const {
     register,
@@ -20,7 +22,7 @@ const login = () => {
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
-    if(login) {
+    if (login) {
       await signIn(email, password);
     }
     else {
@@ -52,6 +54,7 @@ const login = () => {
         className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
       >
         <h1 className="text-4xl font-semibold">Sign In</h1>
+        <p className={`${!error && 'hidden'} py-4 px-4 bg-[#E87C03] rounded-md text-sm text-white font-semibold`}>{error && error}</p>
         <div className="space-y-4">
           <label className="inline-block w-full" htmlFor="">
             <input
@@ -82,11 +85,11 @@ const login = () => {
         </div>
 
         <button
-          className="w-full py-3 rounded bg-[#e50914] font-semibold"
+          className={`w-full py-3 rounded bg-[#e50914] font-semibold ${loading && 'opacity-60'}`}
           type="submit"
           onClick={() => setLogin(true)}
         >
-          Sign In
+          {loading ? <Loader /> : 'Sign In'}
         </button>
 
         <div className="text-[gray]">

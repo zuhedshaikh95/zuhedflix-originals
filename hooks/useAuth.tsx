@@ -45,7 +45,6 @@ export const AuthProvider = ({ children }: Props) => {
       }
       else {
         setUser(null);
-        setLoading(true);
         router.push('/login');
       }
 
@@ -60,31 +59,34 @@ export const AuthProvider = ({ children }: Props) => {
     .then((userCredential) => {
       setUser(userCredential.user);
       router.push('/');
+      setError(null);
     })
-    .catch(({message}) => (setError(message), alert(message)))
+    .catch(({message}) => (setError(message)))
     .finally(() => setLoading(false))
   }
 
   const signIn = async (email: string, password: string) => {
     setLoading(true);
-
+    
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       setUser(userCredential.user);
       router.push('/');
+      setError(null);
     })
-    .catch(({ message }) => (setError(message), alert(message)))
+    .catch(({ message }) => (setError(message)))
     .finally(() => setLoading(false))
   }
 
   const logout = async () => {
     setLoading(true);
-
+    
     signOut(auth)
     .then(() => {
+      setError(null);
       setUser(null);
     })
-    .catch(({ message }) => (setError(message), alert(message)))
+    .catch(({ message }) => (setError(message)))
     .finally(() => setLoading(false));
   }
 
