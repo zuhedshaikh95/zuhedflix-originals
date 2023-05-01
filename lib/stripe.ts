@@ -16,8 +16,8 @@ const loadCheckout = async (priceId: string) => {
 		success_url: window.location.origin,
 		cancel_url: window.location.origin,
 	})
-		.then((snapshot) => window.location.assign(snapshot.url))
-		.catch((error) => console.log(error.message));
+	.then((snapshot) => window.location.assign(snapshot.url))
+	.catch((error) => console.log(error.message));
 };
 
 const goToBillingPortal = async () => {
@@ -30,11 +30,8 @@ const goToBillingPortal = async () => {
 	await functionRef({
 		returnUrl: `${window.location.origin}/account`,
 	})
-		.then(({ data }: any) => {
-			console.log(data);
-			window.location.assign(data.url);
-		})
-		.catch((error) => console.log(error.message));
+	.then(({ data }: any) => window.location.assign(data.url))
+	.catch((error) => console.log(error.message));
 };
 
 export { loadCheckout, goToBillingPortal };

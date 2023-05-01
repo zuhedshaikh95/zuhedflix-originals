@@ -8,7 +8,6 @@ import {
 import React, { useState, createContext, useEffect, useMemo, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { auth } from '../lib/firebase';
-
 interface Props {
   children: React.ReactNode
 }

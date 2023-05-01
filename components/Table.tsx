@@ -91,10 +91,7 @@ const Table = (props: Props) => {
 							}`}
 							key={product.id}
 						>
-							{product.stripe_metadata_devices
-								.split(" ")
-								.map(Number)
-								.map((index: number) => (
+							{product.stripe_metadata_devices.split(" ").map(Number).map((index: number) => (
 									<div
 										key={index}
 										className="font-[500] text-sm pb-2"

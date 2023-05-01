@@ -8,11 +8,6 @@ import {
 	SpeakerXMarkIcon,
 	XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { useRecoilState } from "recoil";
-import { modalState, movieState } from "@/atoms";
-import { useEffect, useState } from "react";
-import { Genre, Movie, Video } from "@/typings";
-import { FaPlay } from "react-icons/fa";
 import {
 	DocumentData,
 	collection,
@@ -21,7 +16,12 @@ import {
 	onSnapshot,
 	setDoc,
 } from "firebase/firestore";
-import useAuth from "@/hooks/useAuth";
+import { useRecoilState } from "recoil";
+import { modalState, movieState } from "@/atoms";
+import { useEffect, useState } from "react";
+import { Genre, Video } from "@/typings";
+import { FaPlay } from "react-icons/fa";
+import { useAuth } from "@/hooks";
 import { db } from "@/lib/firebase";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -51,10 +51,8 @@ const Modal = () => {
 
 		(async () => {
 			const data = await fetch(
-				`https://api.themoviedb.org/3/${
-					movie?.media_type === "tv" ? "tv" : "movie"
-				}/${movie?.id}?api_key=${
-					process.env.NEXT_PUBLIC_API_KEY
+				`https://api.themoviedb.org/3/${movie?.media_type === "tv" ? "tv" : "movie"
+				}/${movie?.id}?api_key=${process.env.NEXT_PUBLIC_API_KEY
 				}&language=en-US&append_to_response=videos`
 			)
 				.then((res) => res.json())
@@ -89,13 +87,12 @@ const Modal = () => {
 	}, [db, movie?.id]);
 
 	// Check wether movie exists in user's colelction
-	useEffect(
-		() =>
-			setAddedToList(
-				userMoviesList.find(
-					(doc: DocumentData) => doc.data().id === movie?.id
-				) !== undefined
-			),
+	useEffect(() =>
+		setAddedToList(
+			userMoviesList.find(
+				(doc: DocumentData) => doc.data().id === movie?.id
+			) !== undefined
+		),
 		[userMoviesList]
 	);
 
@@ -109,11 +106,7 @@ const Modal = () => {
 				doc(db, "customers", user!.uid, "myList", movie?.id.toString())
 			);
 
-			toast(
-				`${
-					movie?.title || movie?.original_name
-				} has been removed from My List.`,
-				{
+			toast(`${movie?.title || movie?.original_name} has been removed from My List.`, {
 					duration: 8000,
 					style: toastStyle
 				}
@@ -124,11 +117,7 @@ const Modal = () => {
 				{ ...movie }
 			);
 
-			toast(
-				`${
-					movie?.title || movie?.original_name
-				} has been added to My List.`,
-				{
+			toast(`${movie?.title || movie?.original_name} has been added to My List.`, {
 					duration: 8000,
 					style: toastStyle
 				}
@@ -218,9 +207,7 @@ const Modal = () => {
 						</div>
 
 						<h1 className="text-base sm:text-xl font-semibold">
-							{movie?.title ||
-								movie?.name ||
-								movie?.original_name}
+							{movie?.title || movie?.name || movie?.original_name}
 						</h1>
 
 						<div className="flex flex-col gap-x-10 gap-y-4 font-light sm:font-normal md:flex-row">
@@ -230,9 +217,7 @@ const Modal = () => {
 							<div className="flex flex-col space-y-3 text-sm sm:text-base">
 								<div>
 									<span className="text-[gray]">Genres:</span>{" "}
-									{genres
-										.map((genre: Genre) => genre.name)
-										.join(", ")}
+									{genres.map((genre: Genre) => genre.name).join(", ")}
 								</div>
 
 								<div>

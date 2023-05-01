@@ -9,7 +9,8 @@ const useMyList = (uid: string | undefined) => {
 	useEffect(() => {
 		if (!uid) return;
 
-		return onSnapshot(collection(db, "customers", uid, "myList"),
+		return onSnapshot(
+			collection(db, "customers", uid, "myList"),
 			(snapshot) => {
 				setList(
 					snapshot.docs.map((doc) => ({

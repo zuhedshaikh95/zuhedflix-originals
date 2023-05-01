@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import useAuth from '@/hooks/useAuth'
+import { useAuth } from '@/hooks';
+import { useState } from 'react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import { Product } from '@stripe/firestore-stripe-payments';
 import { Loader, Table } from './'
@@ -13,13 +13,12 @@ interface Props {
 
 const Plans = (props: Props) => {
   const { products } = props;
-
   const { user, logout } = useAuth();
   const [selectedPlan, setSelectedPlan] = useState<Product>(products[3])
   const [billingLoading, setBillingLoading] = useState<boolean>(false)
 
   const subscribeToPlan = () => {
-    if(!user) return;
+    if (!user) return;
 
     loadCheckout(selectedPlan?.prices[0].id!);
     setBillingLoading(true);
@@ -28,7 +27,7 @@ const Plans = (props: Props) => {
   return (
     <div>
       <Head>
-        <title>Netflix</title>
+        <title>Zuhedflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -71,9 +70,8 @@ const Plans = (props: Props) => {
           <div className="flex w-full items-center justify-end self-end md:w-4/5">
             {products.map((product: Product) => (
               <div
-                className={`planBox ${
-                  selectedPlan?.id === product.id ? 'opacity-100' : 'opacity-60'
-                }`}
+                className={`planBox ${selectedPlan?.id === product.id ? 'opacity-100' : 'opacity-60'
+                  }`}
                 key={product.id}
                 onClick={() => setSelectedPlan(product)}
               >
@@ -86,9 +84,8 @@ const Plans = (props: Props) => {
 
           <button
             disabled={!selectedPlan || billingLoading}
-            className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
-              billingLoading && 'opacity-60'
-            }`}
+            className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${billingLoading && 'opacity-60'
+              }`}
             onClick={subscribeToPlan}
           >
             {billingLoading ? (

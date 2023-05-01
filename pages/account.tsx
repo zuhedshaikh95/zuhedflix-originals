@@ -1,12 +1,10 @@
-import { getProducts, Product } from "@stripe/firestore-stripe-payments";
-import useAuth from "@/hooks/useAuth";
-import useSubscription from "@/hooks/useSubscription";
-import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import payments from "@/lib/stripe";
+import { getProducts, Product } from "@stripe/firestore-stripe-payments";
+import { useAuth, useSubscription } from '../hooks';
+import { GetStaticProps } from "next";
 import { Membership } from "@/components";
-import { goToBillingPortal } from "@/lib/stripe";
+import payments, { goToBillingPortal } from "@/lib/stripe";
 
 interface Props {
 	products: Product[];
@@ -20,7 +18,7 @@ const Account = (props: Props) => {
 	return (
 		<div>
 			<Head>
-				<title>Account Settings - Netflix</title>
+				<title>Account Settings - Zuhedflix</title>
 				<link rel="icon" href="/favicon.ico"></link>
 			</Head>
 

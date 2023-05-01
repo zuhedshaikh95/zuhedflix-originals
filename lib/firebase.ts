@@ -9,13 +9,13 @@ import { getAuth } from 'firebase/auth';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAb6zFNRLte9fDaH1fEH_lt4pd29mk3DCc",
-  authDomain: "zuhedflix-originals.firebaseapp.com",
-  projectId: "zuhedflix-originals",
-  storageBucket: "zuhedflix-originals.appspot.com",
-  messagingSenderId: "316563643512",
-  appId: "1:316563643512:web:f49f61679fb7443bffe18d",
-  measurementId: "G-11BYK20J87"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase

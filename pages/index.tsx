@@ -1,14 +1,12 @@
 import Head from "next/head";
-import useAuth from "@/hooks/useAuth";
+import payments from "../lib/stripe";
 import { Movie } from "@/typings";
 import { requests } from "@/utils";
 import { Header, Banner, Row, Modal, Plans } from "@/components";
-import { modalState, movieState } from "@/atoms";
+import { modalState } from "@/atoms";
+import { useAuth, useMyList, useSubscription } from '@/hooks'
 import { useRecoilValue } from "recoil";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
-import payments from "../lib/stripe";
-import useSubscription from "@/hooks/useSubscription";
-import useMyList from "@/hooks/useMyList";
 
 interface Props {
 	netflixOriginals: Movie[];
@@ -48,7 +46,7 @@ const Home = (props: Props) => {
 	return (
 		<div className="relative h-screen bg-mobile lg:bg-gradient-to-b lg:h-[140vh]">
 			<Head>
-				<title>Home - Netflix</title>
+				<title>Home - Zuhedflix</title>
 				<link rel="icon" href="/favicon.ico"></link>
 			</Head>
 

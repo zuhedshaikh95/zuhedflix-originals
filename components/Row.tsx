@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
-import { Movie } from '@/typings';
-import Thumbnail from './Thumbnail';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { DocumentData } from 'firebase/firestore';
+import { Movie } from '@/typings';
+import { Thumbnail } from './';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface Props {
   title: string

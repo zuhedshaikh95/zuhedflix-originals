@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { baseImageURL } from '@/constants/movie'
 import { Movie } from '@/typings'
 import { FaPlay } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+import { baseImageURL } from '@/constants/movie'
 import { InformationCircleIcon } from '@heroicons/react/24/solid'
 import { modalState, movieState } from '@/atoms';
 import { useRecoilState } from 'recoil';

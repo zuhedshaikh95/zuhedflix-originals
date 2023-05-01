@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
 import Head from 'next/head'
 import Image from 'next/image'
-import useAuth from '@/hooks/useAuth'
+import { useState } from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import { useAuth } from '@/hooks'
 
 interface Inputs {
   email: string
@@ -11,7 +11,7 @@ interface Inputs {
 
 const login = () => {
   const [login, setLogin] = useState<boolean>(false);
-  const { signIn, signUp, error } = useAuth();
+  const { signIn, signUp } = useAuth();
 
   const {
     register,
@@ -31,7 +31,7 @@ const login = () => {
   return (
     <div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
       <Head>
-        <title>Login - Netflix</title>
+        <title>Login - Zuhedflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Image
