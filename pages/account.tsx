@@ -5,6 +5,8 @@ import { useAuth, useSubscription } from '../hooks';
 import { GetStaticProps } from "next";
 import { Membership } from "@/components";
 import payments, { goToBillingPortal } from "@/lib/stripe";
+import logo from '../public/assets/zuheflix.png'
+import Image from "next/image";
 
 interface Props {
 	products: Product[];
@@ -24,8 +26,8 @@ const Account = (props: Props) => {
 
 			<header className="bg-[#141414]">
 				<Link href="/">
-					<img
-						src="https://rb.gy/ulxxee"
+					<Image
+						src={logo}
 						width={120}
 						height={120}
 						className="cursor-pointer object-contain"

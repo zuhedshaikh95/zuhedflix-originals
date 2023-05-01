@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useAuth } from '@/hooks';
 import { Loader } from '@/components';
-
+import logo from '../public/assets/zuheflix.png'
 
 interface Inputs {
   email: string
@@ -42,11 +42,12 @@ const login = () => {
         fill
         alt=""
       />
-      <img
-        src="https://rb.gy/ulxxee"
+      <Image
+        src={logo}
         className="absolute left-4 top-4 cursor-pointer object-contain md:left-10 md:top-6"
         width={150}
         height={150}
+        alt=""
       />
 
       <form
