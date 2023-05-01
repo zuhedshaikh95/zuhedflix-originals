@@ -4,7 +4,7 @@ import { Movie } from "@/typings";
 import { requests } from "@/utils";
 import { Header, Banner, Row, Modal, Plans } from "@/components";
 import { modalState } from "@/atoms";
-import { useAuth, useMyList, useSubscription } from '@/hooks'
+import { useAuth, useSubscription } from '@/hooks'
 import { useRecoilValue } from "recoil";
 import { getProducts, Product } from "@stripe/firestore-stripe-payments";
 
@@ -43,7 +43,6 @@ const Home = (props: Props) => {
 	const { loading, user } = useAuth();
 	const showModal = useRecoilValue(modalState);
 	const subscription = useSubscription(user);
-	const userMovieList = useMyList(user?.uid);
 
 	// Blocking the UI
 	if (loading || subscription === null) return null;
@@ -65,9 +64,6 @@ const Home = (props: Props) => {
 					<Row title="Zuhedflix Originals" movies={netflixOriginals} />
 					<Row title="Top Rated" movies={topRated} />
 					<Row title="Action Thrillers" movies={actionMovies} />
-					{userMovieList.length && (
-						<Row title="My List" movies={userMovieList} />
-					)}
 					<Row title="Animated Movies" movies={animatedMovies} />
 					<Row title="Horror Movies" movies={horrorMovies} />
 					<Row title="Science Fiction" movies={scienceFiction} />

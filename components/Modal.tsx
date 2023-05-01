@@ -193,7 +193,7 @@ const Modal = () => {
 				</div>
 
 				<div className="flex space-x-16 rounded-b-md bg-[#181818] px-7 py-5 sm:px-10 sm:pt-8 sm:pb-8">
-					<div className="space-y-6 text-lg">
+					<div className="space-y-4 text-lg">
 						<div className="flex items-end space-x-2 text-sm">
 							<p className="font-semibold text-green-400">
 								{(movie?.vote_average * 10).toFixed(2)}% Match

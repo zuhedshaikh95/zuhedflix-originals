@@ -6,8 +6,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { BasicMenu } from "./";
 import Image from "next/image";
-// import logo from '../public/assets/netflix.svg';
-import logo from '../public/assets/zuheflix.png';
+import logo from "../public/assets/zuheflix.png";
 
 const Header = () => {
 	const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -31,13 +30,15 @@ const Header = () => {
 	return (
 		<header className={`${isScrolled && "bg-[#141414]"}`}>
 			<div className="flex items-center space-x-2 md:space-x-10">
-				<Image
-					src={logo}
-					width={120}
-					height={100}
-					alt=""
-					className="cursor-pointer object-contain"
-				/>
+				<Link href="/">
+					<Image
+						src={logo}
+						width={120}
+						height={100}
+						alt=""
+						className="cursor-pointer object-contain"
+					/>
+				</Link>
 
 				<BasicMenu />
 
@@ -46,7 +47,9 @@ const Header = () => {
 					<li className="headerLink">TV Shows</li>
 					<li className="headerLink">Movies</li>
 					<li className="headerLink">New & Popular</li>
-					<li className="headerLink">My List</li>
+					<li className="headerLink">
+						<Link href="/my-list">My List</Link>
+					</li>
 				</ul>
 			</div>
 
