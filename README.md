@@ -53,8 +53,8 @@
   </tr>
 
   <tr>
-    <td><img src="https://i.ibb.co/gtVq1YN/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-4-Photo-Room-png-Photo-Room.png"  alt="home" /></td>
     <td><img src="https://i.ibb.co/3Tk6h3V/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-3-Photo-Room-png-Photo-Room.png"  alt="slider" /></td>
+    <td><img src="https://i.ibb.co/gtVq1YN/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-4-Photo-Room-png-Photo-Room.png"  alt="home" /></td>
   </tr>
 
   <tr>
