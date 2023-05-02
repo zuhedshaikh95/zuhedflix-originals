@@ -16,7 +16,7 @@ import {
 	onSnapshot,
 	setDoc,
 } from "firebase/firestore";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { modalState, movieState } from "@/atoms";
 import { useEffect, useState } from "react";
 import { Genre, Video } from "@/typings";
@@ -27,7 +27,7 @@ import { Toaster, toast } from "react-hot-toast";
 
 const Modal = () => {
 	const [showModal, setShowModal] = useRecoilState(modalState);
-	const [movie, setMovie] = useRecoilState(movieState);
+	const movie = useRecoilValue(movieState);
 	const [trailer, setTrailer] = useState<Video | null>(null);
 	const [genres, setGenres] = useState<Genre[]>([]);
 	const [muted, setMuted] = useState<boolean>(false);

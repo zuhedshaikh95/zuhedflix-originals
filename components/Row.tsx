@@ -30,7 +30,7 @@ const Row = (props: Props) => {
   }
 
   return (
-    <div className="h-40 space-y-0.5 md:space-y-2 md:h-32">
+    <div className="h-40 space-y-1 md:space-y-2 md:h-32">
       <h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-[#f5f5f1] md:text-base">
         {title}
       </h2>
