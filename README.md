@@ -6,8 +6,6 @@
 
 <h2 align="center">🖥️ Tech Stack</h2>
 
-<h4 align="center">Frontend:</h4>
-
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="reactjs" />
   <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="nextjs" />
@@ -49,7 +47,7 @@
   </tr>
 </table> -->
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+<div style="display: grid !important; grid-template-columns: repeat(4, 1fr) !important;">
   <img src="https://i.ibb.co/gtVq1YN/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-4-Photo-Room-png-Photo-Room.png"  alt="home" />
   <img src="https://i.ibb.co/3Tk6h3V/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-3-Photo-Room-png-Photo-Room.png"  alt="slider" />
   <img src="https://i.ibb.co/bNTCNj8/Playful-Aesthetic-i-Phone-Mockup-Online-Sale-Instagram-Post-Photo-Room-png-Photo-Room-1.png"  alt="slider" />
