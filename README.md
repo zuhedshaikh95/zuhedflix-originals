@@ -23,7 +23,17 @@
 </p>
 
 <br />
+<br />
+
+<p align="center" style="width:70%; margin: auto;">
+<em>
+  <b>
+    While subscribing to a plan, please note that the following payment will taken into account as a dummy test payment. No amount shall be debited and use <a href='https://stripe.com/docs/testing#cards' target='_blank'>dummy card details</a> while subscribing also, prohibit the use of your personal banking details.
+  </b>
+</em>
 </p>
+
+<br />
 <br />
 
 ![cover](https://i.ibb.co/RQcQBy7/zuhedflix-originals-gif.gif)
@@ -62,14 +72,6 @@ One of my aim to create this project is to learn the tips and tricks while creat
 Entire movies data is fetched from the <a href='https://tmdb.org/' target='_blank'>https://tmdb.org/</a> API. To maintain a sophisticated backend, integrated with powerful Stripe payment, Firebase was implemented with Stripe extension to handle secure payments over apps. The extension from Firebase to utilize Stripe provides this robust and beautiful UI for checkout and plan subscriptions via a custom WebHook also provided by Firebase to integrate with Stripe to access customers, products, and their subscriptions. In conclusion, custom hooks to manage the data flow over the application, hooks like useAuth: a customized hook to maintain authorization of the user, combined with ContextAPI and useMemo hooks which give powerful states to handle errors and authorization of the user and optimize the overall performance.
 
 <br />
-
-<p align="center" style="width:70%; margin: auto;">
-  <em>
-    <b>
-      While subscribing to a plan, please note that the following payment will taken into account as a dummy test payment. No amount shall be debited and use <a href='https://stripe.com/docs/testing#cards' target='_blank'>dummy card details</a> while subscribing also, prohibit the use of your personal banking details.
-    </b>
-  </em>
-</p>
 
 <br />
 
