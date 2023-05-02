@@ -124,7 +124,7 @@ Entire movies data is fetched from the <a href='https://tmdb.org/' target='_blan
 <table>
   <tr>
     <td><img src="https://i.ibb.co/3fBLhB2/1.png"  alt="home" /></td>
-    <td><img src="https://i.ibb.co/FsNLnJS/2.png"  alt="slider" /></td>
+    <td><img src="https://i.ibb.co/9g0wNQ4/14.png"  alt="slider" /></td>
   </tr>
   <tr>
     <td><img src="https://i.ibb.co/fYdBWVt/3.png"  alt="men" /></td>
