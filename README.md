@@ -63,6 +63,16 @@ Entire movies data is fetched from the <a href='https://tmdb.org/' target='_blan
 
 <br />
 
+<p align="center" style="width:70%; margin: auto;">
+  <em>
+    <b>
+      While subscribing to a plan, please note that the following payment will taken into account as a dummy test payment. No amount shall be debited and use <a href='https://stripe.com/docs/testing#cards' target='_blank'>dummy card details</a> while subscribing also, prohibit the use of your personal banking details.
+    </b>
+  </em>
+</p>
+
+<br />
+
 ## Screens
 
 -   Signup and Sign in
