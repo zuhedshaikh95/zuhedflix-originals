@@ -23,7 +23,7 @@ const Membership = () => {
 					className="h-10 w-3/5 whitespace-nowrap bg-gray-400 py-2 text-sm font-medium text-black shadow-md hover:bg-gray-200 md:w-4/5"
 					onClick={manageSubscription}
 				>
-					{billingLoading ? <Loader /> : "Cancel Membership"}
+					{billingLoading ? <Loader size="7" /> : "Cancel Membership"}
 				</button>
 			</div>
 

@@ -1,7 +1,13 @@
-const Loader = () => {
+interface Props {
+  size: string 
+}
+
+const Loader = (props: Props) => {
+  const { size } = props;
+
   return (
     <svg
-      className="mx-auto w-7 h-7"
+      className={`mx-auto w-${size} h-${size}`}
       viewBox="0 0 38 38"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -94,7 +94,7 @@ const Plans = (props: Props) => {
 						}`}
 						onClick={subscribeToPlan}
 					>
-						{billingLoading ? <Loader /> : "Subscribe"}
+						{billingLoading ? <Loader size="7" /> : "Subscribe"}
 					</button>
 				</div>
 			</main>
